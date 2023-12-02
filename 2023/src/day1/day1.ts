@@ -7,6 +7,7 @@ import {
   spelledDigitToNumber,
 } from "./typesAndConstants.ts";
 
+// noinspection JSUnusedGlobalSymbols
 export const printSolution = (calibrationLines: string[]) => {
   console.log(calcCalibrationValueSum(calibrationLines, matchDigits));
   console.log(calcCalibrationValueSum(calibrationLines, matchDigitsAndSpelledDigits));

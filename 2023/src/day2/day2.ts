@@ -7,6 +7,7 @@ import {
   isCubeColor,
 } from "./typesAndConstants.ts";
 
+// noinspection JSUnusedGlobalSymbols
 export const printSolution = (games: string[]) => {
   console.log(calcIdSumOfPossibleGames(games));
   console.log(calcPowerSumOfRequiredCubes(games));
