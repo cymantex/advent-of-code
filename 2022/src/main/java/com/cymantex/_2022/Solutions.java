@@ -22,7 +22,9 @@ public class Solutions {
 
   public static void main(String[] a) {
     Logger.setLoglevel(Logger.INFO);
-    Solutions.printSolution(10);
+    for(int day = 0; day < 10; day++) {
+      Solutions.printSolution(day);
+    }
   }
 
   @SuppressWarnings("SameParameterValue")
