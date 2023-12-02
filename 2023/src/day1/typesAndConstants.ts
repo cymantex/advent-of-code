@@ -1,4 +1,4 @@
-export const spelledDigitToNumber = {
+export const SPELLED_DIGIT_TO_NUMBER = {
   zero: 0,
   one: 1,
   two: 2,
@@ -11,10 +11,10 @@ export const spelledDigitToNumber = {
   nine: 9,
 } as const;
 
-export type SpelledDigit = keyof typeof spelledDigitToNumber;
+export type SpelledDigit = keyof typeof SPELLED_DIGIT_TO_NUMBER;
 
 export const isSpelledDigit = (str: string): str is SpelledDigit =>
-  Object.keys(spelledDigitToNumber).includes(str);
+  Object.keys(SPELLED_DIGIT_TO_NUMBER).includes(str);
 
 export interface DigitMatch {
   index: number;

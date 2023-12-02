@@ -4,7 +4,7 @@ import {
   MatchDigits,
   MatchDigitsArgs,
   SpelledDigit,
-  spelledDigitToNumber,
+  SPELLED_DIGIT_TO_NUMBER,
 } from "./typesAndConstants.ts";
 
 // noinspection JSUnusedGlobalSymbols
@@ -29,11 +29,11 @@ export const toCalibrationValue = (calibrationDigits: string): number =>
     10
   );
 
-export const toDigits = (str: string, matchDigits: MatchDigits) =>
-  Object.entries(spelledDigitToNumber)
+export const toDigits = (calibrationLine: string, matchDigits: MatchDigits) =>
+  Object.entries(SPELLED_DIGIT_TO_NUMBER)
     .flatMap(([spelledDigit, digit]) =>
       matchDigits({
-        calibrationLine: str,
+        calibrationLine,
         spelledDigit: spelledDigit as SpelledDigit,
         digit,
       })
@@ -59,5 +59,5 @@ export const matchDigit = (str: string, digit: string): DigitMatch[] =>
     .filter((match) => match.length > 0)
     .map((match) => ({
       index: match.index!,
-      digit: isSpelledDigit(match[0]) ? spelledDigitToNumber[match[0]] : parseInt(match[0], 10),
+      digit: isSpelledDigit(match[0]) ? SPELLED_DIGIT_TO_NUMBER[match[0]] : parseInt(match[0], 10),
     }));

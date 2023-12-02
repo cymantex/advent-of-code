@@ -1,4 +1,4 @@
-import { countRequiredCubes, gameIsPossible, parseGame } from "./day2.ts";
+import { countRequiredCubes, isGamePossible, parseGame } from "./day2.ts";
 
 test("parseGame", () => {
   expect(parseGame("Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue")).toEqual({
@@ -10,16 +10,16 @@ test("parseGame", () => {
   });
 });
 
-test("gameIsPossible", () => {
+test("isGamePossible", () => {
   const availableCubes = {
     blue: 12,
     red: 13,
     green: 14,
   };
 
-  expect(gameIsPossible({ id: 1, sets: [] }, availableCubes)).toBe(true);
+  expect(isGamePossible({ id: 1, sets: [] }, availableCubes)).toBe(true);
   expect(
-    gameIsPossible(
+    isGamePossible(
       {
         id: 1,
         sets: [{ blue: 0, red: 14, green: 0 }],
@@ -28,7 +28,7 @@ test("gameIsPossible", () => {
     )
   ).toBe(false);
   expect(
-    gameIsPossible(
+    isGamePossible(
       {
         id: 1,
         sets: [{ blue: 12, red: 13, green: 14 }],

@@ -1,16 +1,14 @@
-export const cubeColors = ["blue", "red", "green"] as const;
-type CubeColor = (typeof cubeColors)[number];
+export const CUBE_COLORS = ["blue", "red", "green"] as const;
+type CubeColor = (typeof CUBE_COLORS)[number];
 export type CubeSet = Record<CubeColor, number>;
-export const isCubeColor = (color: string): color is CubeColor =>
-  cubeColors.includes(color as CubeColor);
 
-export const emptyCubeSet: CubeSet = {
+export const EMPTY_CUBE_SET: CubeSet = {
   blue: 0,
   red: 0,
   green: 0,
 } as const;
 
-export const availableCubes: CubeSet = {
+export const AVAILABLE_CUBES: CubeSet = {
   blue: 14,
   red: 12,
   green: 13,
