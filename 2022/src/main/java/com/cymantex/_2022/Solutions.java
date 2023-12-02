@@ -5,8 +5,6 @@ import static java.lang.System.out;
 
 import com.cymantex._2022.day1.CalorieCounting;
 import com.cymantex._2022.day10.CathodeAnalyzer;
-import com.cymantex._2022.day11.MonkeyInspection;
-import com.cymantex._2022.day11.Operation;
 import com.cymantex._2022.day2.RpsTournament;
 import com.cymantex._2022.day3.MisplacedBadges;
 import com.cymantex._2022.day3.RucksackReorganization;
@@ -24,12 +22,7 @@ public class Solutions {
 
   public static void main(String[] a) {
     Logger.setLoglevel(Logger.INFO);
-    Solutions.printSolution(11);
-
-//    for (int day = 1; day <= 10; day++) {
-//      printSolution(day);
-//      out.println();
-//    }
+    Solutions.printSolution(10);
   }
 
   @SuppressWarnings("SameParameterValue")
@@ -49,22 +42,7 @@ public class Solutions {
       case 8 -> day8_countTrees(input);
       case 9 -> day9_ropeBridge(input);
       case 10 -> day10_cathodeAnalyzer(input, sampleInput);
-      case 11 -> day11_monkeyInTheMiddle(input, sampleInput);
     }
-  }
-
-  private static void day11_monkeyInTheMiddle(String input, String sampleInput) {
-    out.println(new MonkeyInspection(sampleInput, Operation::calcReducedWorryLevel)
-        .runItemInspectionRounds(20)
-        .calcMonkeyBusiness());
-
-    out.println(new MonkeyInspection(input, Operation::calcReducedWorryLevel)
-        .runItemInspectionRounds(20)
-        .calcMonkeyBusiness());
-
-    out.println(new MonkeyInspection(sampleInput, Operation::delayedWorryLevelCalc)
-        .runItemInspectionRounds(10000)
-        .calcMonkeyBusiness());
   }
 
   private static void day10_cathodeAnalyzer(String sampleInstructions, String instructions) {
