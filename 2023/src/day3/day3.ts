@@ -83,11 +83,11 @@ const findAdjacentPositions = ({
 }): Position[] => {
   const y = start.y;
   const northPositions = createPositions(y - 1, start.x - 1, end.x + 1);
-  const right = { x: end.x + 1, y };
+  const east = { x: end.x + 1, y };
   const southPositions = createPositions(y + 1, start.x - 1, end.x + 1).reverse();
-  const left = { x: start.x - 1, y };
+  const west = { x: start.x - 1, y };
 
-  return [...northPositions, right, ...southPositions, left].filter((position) =>
+  return [...northPositions, east, ...southPositions, west].filter((position) =>
     symbolMap.has(position)
   );
 };
