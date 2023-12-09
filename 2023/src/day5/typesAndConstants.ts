@@ -19,5 +19,3 @@ export interface AlmanacMapping {
   destinationRangeStart: number;
   rangeLength: number;
 }
-
-// Chain of responsibility
