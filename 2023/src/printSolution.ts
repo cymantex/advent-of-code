@@ -7,11 +7,13 @@ if (process.argv.length < 3) {
 
 const printSolutionForDay = async (day: string) => {
   const { printSolution } = await import(`./${day}/${day}.ts`);
-  printSolution(readInputLines(`${day}.txt`));
+  const daysWithoutSplit = ["day5"];
+  const input = readInput(`${day}.txt`);
+  printSolution(daysWithoutSplit.includes(day) ? input : input.split("\n"));
 };
 
-function readInputLines(fileName: string): string[] {
-  return fs.readFileSync(`src/inputs/${fileName}`).toString().split("\n");
+function readInput(fileName: string): string {
+  return fs.readFileSync(`src/inputs/${fileName}`).toString();
 }
 
 await printSolutionForDay(`day${parseInt(process.argv[2], 10)}`);
